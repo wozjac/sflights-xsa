@@ -1,0 +1,31 @@
+{
+	"format_version": 1,
+	"imports":[{
+		"target_table":	"Flights.db::FlightsModel.SGEOCITY",
+		"source_data": { 
+			"data_type": "CSV",
+			"file_name": "Flights.db.data::SGEOCITY.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimeter": ","
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+				"MANDT",
+				"CITY",
+				"COUNTRY",
+				"LATITUDE",
+				"LONGITUDE"
+			]
+		},
+		"column_mappings": {
+			"MANDT": 1,
+			"CITY": 2,
+			"COUNTRY": 3,
+			"LATITUDE": 4,
+			"LONGITUDE": 5
+		}
+	}]
+}

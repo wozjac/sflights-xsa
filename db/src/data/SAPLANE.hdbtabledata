@@ -1,0 +1,57 @@
+{
+	"format_version": 1,
+	"imports": [{
+		"target_table": "Flights.db::FlightsModel.SAPLANE",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "Flights.db.data::SAPLANE.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimeter": ","
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+				"MANDT",
+				"PLANETYPE",
+				"SEATSMAX",
+				"CONSUM",
+				"CON_UNIT",
+				"TANKCAP",
+				"CAP_UNIT",
+				"WEIGHT",
+				"WEI_UNIT",
+				"SPAN",
+				"SPAN_UNIT",
+				"LENG",
+				"LENG_UNIT",
+				"OP_SPEED",
+				"SPEED_UNIT",
+				"PRODUCER",
+				"SEATSMAX_B",
+				"SEATSMAX_F"
+			]
+		},
+		"column_mappings": {
+			"MANDT": 1,
+			"PLANETYPE": 2,
+			"SEATSMAX": 3,
+			"CONSUM": 4,
+			"CON_UNIT": 5,
+			"TANKCAP": 6,
+			"CAP_UNIT": 7,
+			"WEIGHT": 8,
+			"WEI_UNIT": 9,
+			"SPAN": 10,
+			"SPAN_UNIT": 11,
+			"LENG": 12,
+			"LENG_UNIT": 13,
+			"OP_SPEED": 14,
+			"SPEED_UNIT": 15,
+			"PRODUCER": 16,
+			"SEATSMAX_B": 17,
+			"SEATSMAX_F": 18
+		}
+	}]
+}

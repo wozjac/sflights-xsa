@@ -1,0 +1,27 @@
+{
+	"format_version": 1,
+	"imports":[{
+		"target_table":	"Flights.db::FlightsModel.SMACOURSE",
+		"source_data": { 
+			"data_type": "CSV",
+			"file_name": "Flights.db.data::SMACOURSE.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimeter": ","
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+				"MANDT",
+				"CARRID",
+				"MEALNUMBER"
+			]
+		},
+		"column_mappings": {
+			"MANDT": 1,
+			"CARRID": 2,
+			"MEALNUMBER": 3
+		}
+	}]
+}

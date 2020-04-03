@@ -1,0 +1,43 @@
+{
+	"format_version": 1,
+	"imports":[{
+		"target_table":	"Flights.db::FlightsModel.SNVOICE",
+		"source_data": { 
+			"data_type": "CSV",
+			"file_name": "Flights.db.data::SNVOICE.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimeter": ","
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+				"MANDT",
+				"CARRID",
+				"CONNID",
+				"FLDATE",
+				"BOOKID",
+				"CUSTOMID",
+				"INSTNO",
+				"PAYMETH",
+				"AMOUNT",
+				"CURRENCY",
+				"ARCHIVE_"
+			]
+		},
+		"column_mappings": {
+			"MANDT": 1,
+			"CARRID": 2,
+			"CONNID": 3,
+			"FLDATE": 4,
+			"BOOKID": 5,
+			"CUSTOMID": 6,
+			"INSTNO": 7,
+			"PAYMETH": 8,
+			"AMOUNT": 9,
+			"CURRENCY": 10,
+			"ARCHIVE_": 11
+		}
+	}]
+}

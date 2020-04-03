@@ -1,0 +1,53 @@
+{
+	"format_version": 1,
+	"imports": [{
+		"target_table": "Flights.db::FlightsModel.SCUSTOM",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "Flights.db.data::SCUSTOM.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimeter": ","
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+				"MANDT",
+				"ID",
+				"NAME",
+				"FORM",
+				"STREET",
+				"POSTBOX",
+				"POSTCODE",
+				"CITY",
+				"COUNTRY",
+				"REGION",
+				"TELEPHONE",
+				"CUSTTYPE",
+				"DISCOUNT",
+				"LANGU",
+				"EMAIL",
+				"WEBUSER"
+			]
+		},
+		"column_mappings": {
+			"MANDT": 1,
+			"ID": 2,
+			"NAME": 3,
+			"FORM": 4,
+			"STREET": 5,
+			"POSTBOX": 6,
+			"POSTCODE": 7,
+			"CITY": 8,
+			"COUNTRY": 9,
+			"REGION": 10,
+			"TELEPHONE": 11,
+			"CUSTTYPE": 12,
+			"DISCOUNT": 13,
+			"LANGU": 14,
+			"EMAIL": 15,
+			"WEBUSER": 16
+		}
+	}]
+}

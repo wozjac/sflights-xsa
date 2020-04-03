@@ -1,0 +1,53 @@
+{
+	"format_version": 1,
+	"imports":[{
+		"target_table":	"Flights.db::FlightsModel.SPFLI",
+		"source_data": { 
+			"data_type": "CSV",
+			"file_name": "Flights.db.data::SPFLI.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimeter": ","
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+				"MANDT",
+				"CARRID",
+				"CONNID",
+				"COUNTRYFR",
+				"CITYFROM",
+				"AIRPFROM",
+				"COUNTRYTO",
+				"CITYTO",
+				"AIRPTO",
+				"FLTIME",
+				"DEPTIME",
+				"ARRTIME",
+				"DISTANCE",
+				"DISTID",
+				"FLTYPE",
+				"PERIOD"
+			]
+		},
+		"column_mappings": {
+			"MANDT": 1,
+			"CARRID": 2,
+			"CONNID": 3,
+			"COUNTRYFR": 4,
+			"CITYFROM": 5,
+			"AIRPFROM": 6,
+			"COUNTRYTO": 7,
+			"CITYTO": 8,
+			"AIRPTO": 9,
+			"FLTIME": 10,
+			"DEPTIME": 11,
+			"ARRTIME": 12,
+			"DISTANCE": 13,
+			"DISTID": 14,
+			"FLTYPE": 15,
+			"PERIOD": 16
+		}
+	}]
+}

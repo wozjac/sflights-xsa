@@ -1,0 +1,33 @@
+{
+	"format_version": 1,
+	"imports":[{
+		"target_table":	"Flights.db::FlightsModel.SMENU",
+		"source_data": { 
+			"data_type": "CSV",
+			"file_name": "Flights.db.data::SMENU.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimeter": ","
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+				"MANDT",
+				"CARRID",
+				"MENUNUMBER",
+				"STARTER",
+				"MAINCOURSE",
+				"DESSERT"
+			]
+		},
+		"column_mappings": {
+			"MANDT": 1,
+			"CARRID": 2,
+			"MENUNUMBER": 3,
+			"STARTER": 4,
+			"MAINCOURSE": 5,
+			"DESSERT": 6
+		}
+	}]
+}

@@ -1,0 +1,49 @@
+{
+	"format_version": 1,
+	"imports":[{
+		"target_table":	"Flights.db::FlightsModel.SFLIGHT",
+		"source_data": { 
+			"data_type": "CSV",
+			"file_name": "Flights.db.data::SFLIGHT.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimeter": ","
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+				"MANDT",
+				"CARRID",
+				"CONNID",
+				"FLDATE",
+				"PRICE",
+				"CURRENCY",
+				"PLANETYPE",
+				"SEATSMAX",
+				"SEATSOCC",
+				"PAYMENTSUM",
+				"SEATSMAX_B",
+				"SEATSOCC_B",
+				"SEATSMAX_F",
+				"SEATSOCC_F"
+			]
+		},
+		"column_mappings": {
+			"MANDT": 1,
+			"CARRID": 2,
+			"CONNID": 3,
+			"FLDATE": 4,
+			"PRICE": 5,
+			"CURRENCY": 6,
+			"PLANETYPE": 7,
+			"SEATSMAX": 8,
+			"SEATSOCC": 9,
+			"PAYMENTSUM": 10,
+			"SEATSMAX_B": 11,
+			"SEATSOCC_B": 12,
+			"SEATSMAX_F": 13,
+			"SEATSOCC_F": 14
+		}
+	}]
+}

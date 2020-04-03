@@ -1,0 +1,47 @@
+{
+	"format_version": 1,
+	"imports":[{
+		"target_table":	"Flights.db::FlightsModel.STRAVELAG",
+		"source_data": { 
+			"data_type": "CSV",
+			"file_name": "Flights.db.data::STRAVELAG.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimeter": ","
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+				"MANDT",
+				"AGENCYNUM",
+				"NAME",
+				"STREET",
+				"POSTBOX",
+				"POSTCODE",
+				"CITY",
+				"COUNTRY",
+				"REGION",
+				"TELEPHONE",
+				"URL",
+				"LANGU",
+				"CURRENCY"
+			]
+		},
+		"column_mappings": {
+			"MANDT": 1,
+			"AGENCYNUM": 2,
+			"NAME": 3,
+			"STREET": 4,
+			"POSTBOX": 5,
+			"POSTCODE": 6,
+			"CITY": 7,
+			"COUNTRY": 8,
+			"REGION": 9,
+			"TELEPHONE": 10,
+			"URL": 11,
+			"LANGU": 12,
+			"CURRENCY": 13
+		}
+	}]
+}

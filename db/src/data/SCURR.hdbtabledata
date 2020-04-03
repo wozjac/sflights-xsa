@@ -1,0 +1,37 @@
+{
+	"format_version": 1,
+	"imports": [{
+		"target_table": "Flights.db::FlightsModel.SCURR",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "Flights.db.data::SCURR.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimeter": ","
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+				"MANDT",
+				"KURST",
+				"FCURR",
+				"TCURR",
+				"GDATU",
+				"UKURS",
+				"FFACT",
+				"TFACT"
+			]
+		},
+		"column_mappings": {
+			"MANDT": 1,
+			"KURST": 2,
+			"FCURR": 3,
+			"TCURR": 4,
+			"GDATU": 5,
+			"UKURS": 6,
+			"FFACT": 7,
+			"TFACT": 8
+		}
+	}]
+}

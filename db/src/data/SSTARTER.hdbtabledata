@@ -1,0 +1,29 @@
+{
+	"format_version": 1,
+	"imports":[{
+		"target_table":	"Flights.db::FlightsModel.SSTARTER",
+		"source_data": { 
+			"data_type": "CSV",
+			"file_name": "Flights.db.data::SSTARTER.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimeter": ","
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+				"MANDT",
+				"CARRID",
+				"MEALNUMBER",
+				"HOT"
+			]
+		},
+		"column_mappings": {
+			"MANDT": 1,
+			"CARRID": 2,
+			"MEALNUMBER": 3,
+			"HOT": 4
+		}
+	}]
+}

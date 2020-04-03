@@ -1,0 +1,31 @@
+{
+	"format_version": 1,
+	"imports": [{
+		"target_table": "Flights.db::FlightsModel.SBUSPART",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "Flights.db.data::SBUSPART.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimeter": ","
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+				"MANDT",
+				"BUSPARTNUM",
+				"CONTACT",
+				"CONTPHONO",
+				"BUSPATYP"
+			]
+		},
+		"column_mappings": {
+			"MANDT": 1,
+			"BUSPARTNUM": 2,
+			"CONTACT": 3,
+			"CONTPHONO": 4,
+			"BUSPATYP": 5
+		}
+	}]
+}

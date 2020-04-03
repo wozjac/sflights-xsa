@@ -1,0 +1,25 @@
+{
+	"format_version": 1,
+	"imports": [{
+		"target_table": "Flights.db::FlightsModel.SCURX",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "Flights.db.data::SCURX.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimeter": ","
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+				"CURRKEY",
+				"CURRDEC"
+			]
+		},
+		"column_mappings": {
+			"CURRKEY": 1,
+			"CURRDEC": 2
+		}
+	}]
+}

@@ -1,0 +1,31 @@
+{
+	"format_version": 1,
+	"imports": [{
+		"target_table": "Flights.db::FlightsModel.SCITAIRP",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "Flights.db.data::SCITAIRP.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimeter": ","
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+				"MANDT",
+				"CITY",
+				"COUNTRY",
+				"AIRPORT",
+				"MASTERCITY"
+			]
+		},
+		"column_mappings": {
+			"MANDT": 1,
+			"CITY": 2,
+			"COUNTRY": 3,
+			"AIRPORT": 4,
+			"MASTERCITY": 5
+		}
+	}]
+}

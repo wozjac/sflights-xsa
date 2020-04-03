@@ -1,0 +1,69 @@
+{
+	"format_version": 1,
+	"imports": [{
+		"target_table": "Flights.db::FlightsModel.SBOOK",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "Flights.db.data::SBOOK.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimeter": ","
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+				"MANDT",
+				"CARRID",
+				"CONNID",
+				"FLDATE",
+				"BOOKID",
+				"CUSTOMID",
+				"CUSTTYPE",
+				"SMOKER",
+				"LUGGWEIGHT",
+				"WUNIT",
+				"INVOICE",
+				"CLASS",
+				"FORCURAM",
+				"FORCURKEY",
+				"LOCCURAM",
+				"LOCCURKEY",
+				"ORDER_DATE",
+				"COUNTER",
+				"AGENCYNUM",
+				"CANCELLED",
+				"RESERVED",
+				"PASSNAME",
+				"PASSFORM",
+				"PASSBIRTH"
+			]
+		},
+		"column_mappings": {
+			"MANDT": 1,
+			"CARRID": 2,
+			"CONNID": 3,
+			"FLDATE": 4,
+			"BOOKID": 5,
+			"CUSTOMID": 6,
+			"CUSTTYPE": 7,
+			"SMOKER": 8,
+			"LUGGWEIGHT": 9,
+			"WUNIT": 10,
+			"INVOICE": 11,
+			"CLASS": 12,
+			"FORCURAM": 13,
+			"FORCURKEY": 14,
+			"LOCCURAM": 15,
+			"LOCCURKEY": 16,
+			"ORDER_DATE": 17,
+			"COUNTER": 18,
+			"AGENCYNUM": 19,
+			"CANCELLED": 20,
+			"RESERVED": 21,
+			"PASSNAME": 22,
+			"PASSFORM": 23,
+			"PASSBIRTH": 24
+		}
+	}]
+}

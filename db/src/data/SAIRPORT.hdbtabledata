@@ -1,0 +1,29 @@
+{
+	"format_version": 1,
+	"imports": [{
+		"target_table": "Flights.db::FlightsModel.SAIRPORT",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "Flights.db.data::SAIRPORT.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimeter": ","
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+				"MANDT",
+				"ID",
+				"NAME",
+				"TIME_ZONE"
+			]
+		},
+		"column_mappings": {
+			"MANDT": 1,
+			"ID": 2,
+			"NAME": 3,
+			"TIME_ZONE": 4
+		}
+	}]
+}

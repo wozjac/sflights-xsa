@@ -1,0 +1,72 @@
+namespace Flights.db;
+
+using Flights.db::FlightsModel;
+
+view CustomerBusinessPartner as
+    select from FlightsModel.SCUSTOM
+    {
+        MANDT,
+        ID,
+        BUSINESSPARTNER.BUSPARTNUM,
+        NAME,
+        BUSINESSPARTNER.CONTACT,
+        BUSINESSPARTNER.CONTPHONO,
+        BUSINESSPARTNER.BUSPATYP
+    };
+
+view CarrierConnections as
+    select from FlightsModel.SCARR
+    {
+        CARRID,
+        CARRNAME,
+        CURRCODE,
+        CONNECTIONS.CONNID as CONNID,
+        CONNECTIONS.COUNTRYFR as COUNTRYFR,
+        CONNECTIONS.CITYFROM as CITYFROM,
+        CONNECTIONS.AIRPFROM as AIRPFROM,
+        CONNECTIONS.COUNTRYTO as COUNTRYTO,
+        CONNECTIONS.CITYTO as CITYTO,
+        CONNECTIONS.AIRPTO as AIRPTO,
+        FLIGHTS.FLDATE as FLDATE,
+        FLIGHTS.PRICE as PRICE,
+        FLIGHTS.CURRENCY as CURRENCY,
+        FLIGHTS.PLANETYPE as PLANETYPE,
+        FLIGHTS.SEATSMAX as SEATSMAX,
+        FLIGHTS.SEATSOCC as SEATSOCC,
+        FLIGHTS.PAYMENTSUM as PAYMENTSUM,
+        FLIGHTS.SEATSMAX_B as SEATSMAX_B,
+        FLIGHTS.SEATSOCC_B as SEATSOCC_B,
+        FLIGHTS.SEATSMAX_F as SEATSMAX_F,
+        FLIGHTS.SEATSOCC_F as SEATSOCC_F
+    };
+
+view FligthsOnDate
+    with parameters
+        P_DATE : LocalDate
+as
+    select from CarrierConnections
+    {
+        CARRID,
+        CARRNAME,
+        CURRCODE,
+        CONNID,
+        COUNTRYFR,
+        CITYFROM,
+        AIRPFROM,
+        COUNTRYTO,
+        CITYTO,
+        AIRPTO,
+        FLDATE,
+        PRICE,
+        CURRENCY,
+        PLANETYPE,
+        SEATSMAX,
+        SEATSOCC,
+        PAYMENTSUM,
+        SEATSMAX_B,
+        SEATSOCC_B,
+        SEATSMAX_F,
+        SEATSOCC_F
+    }
+    where
+        FLDATE = :P_DATE;

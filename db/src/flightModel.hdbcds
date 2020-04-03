@@ -1,0 +1,416 @@
+namespace Flights.db;
+
+context FlightsModel {
+    entity STRAVELAG {
+        key MANDT     : String(3) not null;
+        key AGENCYNUM : String(8) not null;
+            NAME      : String(25);
+            STREET    : String(30);
+            POSTBOX   : String(10);
+            POSTCODE  : String(10);
+            CITY      : String(25);
+            COUNTRY   : String(3);
+            REGION    : String(3);
+            TELEPHONE : String(30);
+            URL       : String(255);
+            LANGU     : String(1);
+            CURRENCY  : String(5);
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity STICKET {
+        key MANDT    : String(3) not null;
+        key CARRID   : String(3) not null;
+        key CONNID   : String(4) not null;
+        key FLDATE   : LocalDate not null;
+        key BOOKID   : String(8) not null;
+        key CUSTOMID : String(8) not null;
+        key TICKET   : String(1) not null;
+            PLACE    : String(40);
+            ARCHIVE_ : String(4);
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SSTARTER {
+        key MANDT      : String(3) not null;
+        key CARRID     : String(3) not null;
+        key MEALNUMBER : String(8) not null;
+            HOT        : String(1);
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SPFLI {
+        key MANDT     : String(3) not null;
+        key CARRID    : String(3) not null;
+        key CONNID    : String(4) not null;
+            COUNTRYFR : String(3);
+            CITYFROM  : String(20);
+            AIRPFROM  : String(3);
+            COUNTRYTO : String(3);
+            CITYTO    : String(20);
+            AIRPTO    : String(3);
+            FLTIME    : Integer;
+            DEPTIME   : LocalTime;
+            ARRTIME   : LocalTime;
+            DISTANCE  : Decimal(9, 4);
+            DISTID    : String(3);
+            FLTYPE    : String(1);
+            PERIOD    : Integer;
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SPPLANE {
+        key MANDT      : String(3)  not null;
+        key PLANETYPE  : String(10) not null;
+            ANZ_NOTAUS : Integer;
+            ANZ_PERS   : Integer;
+            ANZ_SBER   : Integer;
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SNVOICE {
+        key MANDT    : String(3) not null;
+        key CARRID   : String(3) not null;
+        key CONNID   : String(4) not null;
+        key FLDATE   : LocalDate not null;
+        key BOOKID   : String(8) not null;
+        key CUSTOMID : String(8) not null;
+        key INSTNO   : String(4) not null;
+            PAYMETH  : String(1);
+            AMOUNT   : Decimal(15, 2);
+            CURRENCY : String(5);
+            ARCHIVE_ : String(4);
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SMACOURSE {
+        key MANDT      : String(3) not null;
+        key CARRID     : String(3) not null;
+        key MEALNUMBER : String(8) not null;
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SMEAL {
+        key MANDT      : String(3) not null;
+        key CARRID     : String(3) not null;
+        key MEALNUMBER : String(8) not null;
+            MEALTYPE   : String(2);
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SMEALT {
+        key MANDT      : String(3) not null;
+        key CARRID     : String(3) not null;
+        key MEALNUMBER : String(8) not null;
+        key LANG       : String(1) not null;
+            TEXT       : String(40);
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SMENU {
+        key MANDT      : String(3) not null;
+        key CARRID     : String(3) not null;
+        key MENUNUMBER : String(4) not null;
+            STARTER    : String(8);
+            MAINCOURSE : String(8);
+            DESSERT    : String(8);
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SGEOCITY {
+        key MANDT     : String(3)  not null;
+        key CITY      : String(20) not null;
+        key COUNTRY   : String(3)  not null;
+            LATITUDE  : Decimal(12, 6);
+            LONGITUDE : Decimal(12, 6);
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SFLIGHT {
+        key MANDT      : String(3) not null;
+        key CARRID     : String(3) not null;
+        key CONNID     : String(4) not null;
+        key FLDATE     : LocalDate not null;
+            PRICE      : Decimal(15, 2);
+            CURRENCY   : String(5);
+            PLANETYPE  : String(10);
+            SEATSMAX   : Integer;
+            SEATSOCC   : Integer;
+            PAYMENTSUM : Decimal(17, 2);
+            SEATSMAX_B : Integer;
+            SEATSOCC_B : Integer;
+            SEATSMAX_F : Integer;
+            SEATSOCC_F : Integer;
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SFLIMEAL {
+        key MANDT      : String(3) not null;
+        key CARRID     : String(3) not null;
+        key MEALNUMBER : String(8) not null;
+        key CONNID     : String(4) not null;
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SDESSERT {
+        key MANDT      : String(3) not null;
+        key CARRID     : String(3) not null;
+        key MEALNUMBER : String(8) not null;
+            HOT        : String(1);
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SCARPLAN {
+        key MANDT     : String(3)  not null;
+        key CARRID    : String(3)  not null;
+        key PLANETYPE : String(10) not null;
+            SNUMBER   : Decimal(6, 0);
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SCARR {
+        key MANDT       : String(3) not null;
+        key CARRID      : String(3) not null;
+            CARRNAME    : String(20);
+            CURRCODE    : String(5);
+            URL         : String(255);
+            CONNECTIONS : association[*] to SPFLI   on CONNECTIONS.CARRID = CARRID;
+            FLIGHTS     : association[*] to SFLIGHT on FLIGHTS.CARRID = CARRID;
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SCITAIRP {
+        key MANDT      : String(3)  not null;
+        key CITY       : String(20) not null;
+        key COUNTRY    : String(3)  not null;
+        key AIRPORT    : String(3)  not null;
+            MASTERCITY : String(20);
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SCOUNTER {
+        key MANDT    : String(3) not null;
+        key CARRID   : String(3) not null;
+        key COUNTNUM : String(8) not null;
+            AIRPORT  : String(3);
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SCPLANE {
+        key MANDT     : String(3)  not null;
+        key PLANETYPE : String(10) not null;
+            CARGOMAX  : Decimal(16, 4);
+            CAR_UNIT  : String(3)  not null;
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SCURR {
+        key MANDT : String(3) not null;
+        key KURST : String(4) not null;
+        key FCURR : String(5) not null;
+        key TCURR : String(5) not null;
+        key GDATU : LocalDate not null;
+            UKURS : Decimal(9, 5);
+            FFACT : Decimal(9, 0);
+            TFACT : Decimal(9, 0);
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SCURX {
+        key CURRKEY : String(5) not null;
+            CURRDEC : Integer;
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SCUSTOM {
+        key MANDT           : String(3) not null;
+        key ID              : String(8) not null;
+            NAME            : String(25);
+            FORM            : String(15);
+            STREET          : String(30);
+            POSTBOX         : String(10);
+            POSTCODE        : String(10);
+            CITY            : String(25);
+            COUNTRY         : String(3);
+            REGION          : String(3);
+            TELEPHONE       : String(30);
+            CUSTTYPE        : String(1);
+            DISCOUNT        : String(3);
+            LANGU           : String(1);
+            EMAIL           : String(40);
+            WEBUSER         : String(25);
+            BUSINESSPARTNER : association[1] to SBUSPART on BUSINESSPARTNER.BUSPARTNUM = ID;
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SBOOK {
+        key MANDT      : String(3) not null;
+        key CARRID     : String(3) not null;
+        key CONNID     : String(4) not null;
+        key FLDATE     : LocalDate not null;
+        key BOOKID     : String(8) not null;
+            CUSTOMID   : String(8);
+            CUSTTYPE   : String(1);
+            SMOKER     : String(1);
+            LUGGWEIGHT : Decimal(8, 4);
+            WUNIT      : String(3);
+            INVOICE    : String(1);
+            CLASS      : String(1);
+            FORCURAM   : Decimal(15, 2);
+            FORCURKEY  : String(5);
+            LOCCURAM   : Decimal(15, 2);
+            LOCCURKEY  : String(5);
+            ORDER_DATE : LocalDate;
+            COUNTER    : String(8);
+            AGENCYNUM  : String(8);
+            CANCELLED  : String(1);
+            RESERVED   : String(1);
+            PASSNAME   : String(25);
+            PASSFORM   : String(15);
+            PASSBIRTH  : String(8);
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SBUSPART {
+        key MANDT      : String(3) not null;
+        key BUSPARTNUM : String(8) not null;
+            CONTACT    : String(25);
+            CONTPHONO  : String(30);
+            BUSPATYP   : String(2);
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SAIRPORT {
+        key MANDT     : String(3) not null;
+        key ID        : String(3) not null;
+            NAME      : String(25);
+            TIME_ZONE : String(6) not null;
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    };
+
+    entity SAPLANE {
+        key MANDT      : String(3)  not null;
+        key PLANETYPE  : String(10) not null;
+            SEATSMAX   : Integer    not null;
+            CONSUM     : BinaryFloat;
+            CON_UNIT   : String(3);
+            TANKCAP    : Decimal(16, 4);
+            CAP_UNIT   : String(3);
+            WEIGHT     : Decimal(14, 4);
+            WEI_UNIT   : String(3);
+            SPAN       : BinaryFloat;
+            SPAN_UNIT  : String(3);
+            LENG       : BinaryFloat;
+            LENG_UNIT  : String(3);
+            OP_SPEED   : Decimal(17, 4);
+            SPEED_UNIT : String(3);
+            PRODUCER   : String(5);
+            SEATSMAX_B : Integer;
+            SEATSMAX_F : Integer;
+    }
+    technical configuration {
+        column store;
+        auto merge;
+        unload priority 5;
+    }
+};

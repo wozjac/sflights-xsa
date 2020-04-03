@@ -1,0 +1,29 @@
+{
+	"format_version": 1,
+	"imports": [{
+		"target_table": "Flights.db::FlightsModel.SCPLANE",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "Flights.db.data::SCPLANE.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimeter": ","
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+				"MANDT",
+				"PLANETYPE",
+				"CARGOMAX",
+				"CAR_UNIT"
+			]
+		},
+		"column_mappings": {
+			"MANDT": 1,
+			"PLANETYPE": 2,
+			"CARGOMAX": 3,
+			"CAR_UNIT": 4
+		}
+	}]
+}
